@@ -37,42 +37,45 @@
             // 
             this.btnFinder.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnFinder.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold);
-            this.btnFinder.Location = new System.Drawing.Point(597, 123);
+            this.btnFinder.Location = new System.Drawing.Point(314, 355);
             this.btnFinder.Name = "btnFinder";
-            this.btnFinder.Size = new System.Drawing.Size(101, 205);
+            this.btnFinder.Size = new System.Drawing.Size(101, 45);
             this.btnFinder.TabIndex = 9;
             this.btnFinder.Text = "Finder";
             this.btnFinder.UseVisualStyleBackColor = false;
+            this.btnFinder.Click += new System.EventHandler(this.btnFinder_Click);
             // 
             // lvShowText
             // 
             this.lvShowText.HideSelection = false;
-            this.lvShowText.Location = new System.Drawing.Point(210, 123);
+            this.lvShowText.Location = new System.Drawing.Point(38, 79);
             this.lvShowText.Name = "lvShowText";
             this.lvShowText.Size = new System.Drawing.Size(377, 205);
             this.lvShowText.TabIndex = 8;
             this.lvShowText.UseCompatibleStateImageBehavior = false;
+            this.lvShowText.SelectedIndexChanged += new System.EventHandler(this.lvShowText_SelectedIndexChanged);
             // 
             // btnOpen
             // 
             this.btnOpen.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.btnOpen.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold);
-            this.btnOpen.Location = new System.Drawing.Point(102, 123);
+            this.btnOpen.Location = new System.Drawing.Point(38, 355);
             this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(102, 205);
+            this.btnOpen.Size = new System.Drawing.Size(105, 48);
             this.btnOpen.TabIndex = 7;
             this.btnOpen.Text = "Open";
             this.btnOpen.UseVisualStyleBackColor = false;
+            this.btnOpen.Click += new System.EventHandler(this.btnOpen_Click);
             // 
-            // Form1
+            // FrmOpenTextFile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(467, 450);
             this.Controls.Add(this.btnFinder);
             this.Controls.Add(this.lvShowText);
             this.Controls.Add(this.btnOpen);
-            this.Name = "Form1";
+            this.Name = "FrmOpenTextFile";
             this.Text = "Form1";
             this.ResumeLayout(false);
 

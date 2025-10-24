@@ -11,53 +11,29 @@ using System.Windows.Forms;
 
 namespace ReadingafileYURI
 {
-    public partial class FrmOpenTextFile : Form
+    public partial class FrmStudentRecord : Form
     {
-        public FrmOpenTextFile()
+        public FrmStudentRecord()
         {
             InitializeComponent();
         }
 
-        private void btnOpen_Click(object sender, EventArgs e)
+        private void btnRegister_Click(object sender, EventArgs e)
         {
-            OpenFileDialog openFileDialog1 = new OpenFileDialog
-            {
-                InitialDirectory = Path.Combine(Application.StartupPath, "TextFiles"),
-                Title = "Browse Text Files",
-                DefaultExt = "txt",
-                Filter = "Text files (*.txt)|*.txt|All files (*.*)|*.*"
-            };
-
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            {
-                string path = openFileDialog1.FileName;
-
-                try
-                {
-                    using (StreamReader streamReader = File.OpenText(path))
-                    {
-                        string _getText;
-                        lvShowText.Items.Clear();
-
-                        while ((_getText = streamReader.ReadLine()) != null)
-                        {
-                            lvShowText.Items.Add(_getText);
-                        }
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error reading file: " + ex.Message);
-                }
-
-            }
+            FrmRegistration registrationForm = new FrmRegistration();
+            registrationForm.Show();
+            this.Hide();
         }
 
-        private void btnFinder_Click(object sender, EventArgs e)
+        private void btnFind_Click(object sender, EventArgs e)
         {
-            FrmStudentRecord studentRecordForm = new FrmStudentRecord();
-            studentRecordForm.Show();
-            this.Hide();
+            lvShowText_SelectedIndexChanged(sender, e);
+        }
+
+        private void btnUpload_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Successfully Uploaded!");
+            lvShowText.Items.Clear();
         }
 
         private void lvShowText_SelectedIndexChanged(object sender, EventArgs e)
@@ -85,13 +61,13 @@ namespace ReadingafileYURI
                         {
                             lvShowText.Items.Add(_getText);
                         }
+
                     }
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error reading file: " + ex.Message);
                 }
-
             }
         }
     }
